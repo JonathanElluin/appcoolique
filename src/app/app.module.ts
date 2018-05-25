@@ -10,15 +10,8 @@ import {LoginPage} from '../pages/login/login';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {AngularFireModule} from "angularfire2";
+import {firebaseConfig} from "app.firebaseConfig"
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyChLUc5HhIu94yE-poKfKPz9XdhbYq0qIE",
-  authDomain: "appcoolique.firebaseapp.com",
-  databaseURL: "https://appcoolique.firebaseio.com",
-  projectId: "appcoolique",
-  storageBucket: "appcoolique.appspot.com",
-  messagingSenderId: "260522570479"
-};
 @NgModule({
   declarations: [
     MyApp,
