@@ -9,6 +9,7 @@ import {MyApp} from './app.component';
 import {LoginPage} from '../pages/login/login';
 import {AppcooliqueListPage} from '../pages/appcoolique-list/appcoolique-list';
 import {AppcooliqueAddPage} from '../pages/appcoolique-add/appcoolique-add';
+import {RegisterPage} from '../pages/register/register';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -24,7 +25,8 @@ import { AuthProvider } from '../providers/auth/auth';
     //Pages go here
     LoginPage,
     AppcooliqueListPage,
-    AppcooliqueAddPage
+    AppcooliqueAddPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { AuthProvider } from '../providers/auth/auth';
     //Pages go here
     LoginPage,
     AppcooliqueListPage,
-    AppcooliqueAddPage
+    AppcooliqueAddPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,

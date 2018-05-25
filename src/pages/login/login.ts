@@ -8,6 +8,7 @@ import 'rxjs/add/operator/map';
 import {User} from "../../models/User";
 import { AngularFireAuth } from 'angularfire2/auth';
 import {AuthProvider} from "../../providers/auth/auth";
+import {RegisterPage} from "../register/register";
 
 /**
  * Generated class for the LoginPage page.
@@ -39,6 +40,10 @@ export class LoginPage {
 
   login(user: User){
     this.auth_service.login(user);
+  }
+
+  register() {
+    this.navCtrl.push(RegisterPage);
   }
 
 
