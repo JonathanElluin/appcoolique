@@ -1,4 +1,4 @@
-export class Appcoolique {
+export class Alcoolique {
     id?: string;
     firstname: string;
     lastname: string;
