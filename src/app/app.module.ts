@@ -11,6 +11,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {AngularFireModule} from "angularfire2";
 import {firebaseConfig} from "app.firebaseConfig"
+import { AppcooliqueProvider } from '../providers/appcoolique/appcoolique';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {firebaseConfig} from "app.firebaseConfig"
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AppcooliqueProvider
   ]
 })
 export class AppModule {
