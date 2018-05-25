@@ -1,5 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+import {AngularFirestore} from "angularfire2/firestore";
+import {NavController} from "ionic-angular";
+import {HomePage} from "../../pages/home/home";
+import {User} from "../../models/User";
+import { App } from "ionic-angular";
 
 /*
   Generated class for the AuthProvider provider.
@@ -9,9 +16,24 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class AuthProvider {
+  private user: firebase.User;
+  private navCtrl: NavController;
 
-  constructor(public http: HttpClient) {
+  constructor(public db: AngularFirestore, public afAuth: AngularFireAuth, private app:App) {
     console.log('Hello AuthProvider Provider');
+    this.navCtrl = app.getActiveNav();
+  }
+
+  async login(user: User) {
+    try {
+      const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      if (result) {
+        this.navCtrl.setRoot(HomePage);
+      }
+    }
+    catch (e) {
+      console.error(e);
+    }
   }
 
 }
