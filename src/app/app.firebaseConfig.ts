@@ -1,5 +1,5 @@
 export const firebaseConfig = {
-  apiKey: "",
+  apiKey: "AIzaSyChLUc5HhIu94yE-poKfKPz9XdhbYq0qIE",
   authDomain: "appcoolique.firebaseapp.com",
   databaseURL: "https://appcoolique.firebaseio.com",
   projectId: "appcoolique",
