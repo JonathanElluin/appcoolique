@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Observable } from 'rxjs/observable';
 import { Alcoolique } from '../../models/appcoolique';
 import { AlcooliqueProvider } from '../../providers/alcoolique/alcoolique';
+import { AppcooliqueAddPage } from '../appcoolique-add/appcoolique-add';
 
 @IonicPage()
 @Component({
@@ -29,6 +30,6 @@ export class AppcooliqueListPage {
   
   addAlcoolique()
   {
-    this.navCtrl.push("appcoolique-add");
+    this.navCtrl.push(AppcooliqueAddPage);
   }
 }
