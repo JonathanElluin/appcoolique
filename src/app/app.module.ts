@@ -15,6 +15,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import {AngularFireModule} from "angularfire2";
 import {firebaseConfig} from "./app.firebaseConfig";
 import { AlcooliqueProvider } from '../providers/alcoolique/alcoolique';
+import { AuthProvider } from '../providers/auth/auth';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { AlcooliqueProvider } from '../providers/alcoolique/alcoolique';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AlcooliqueProvider
+    AlcooliqueProvider,
+    AuthProvider
   ]
 })
 export class AppModule {

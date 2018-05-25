@@ -5,7 +5,6 @@ import { AngularFirestoreCollection, AngularFirestoreDocument } from
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {HomePage} from "../home/home";
 import {User} from "../../models/User";
 import { AngularFireAuth } from 'angularfire2/auth';
 import {AuthProvider} from "../../providers/auth/auth";

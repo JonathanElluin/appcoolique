@@ -4,9 +4,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import {AngularFirestore} from "angularfire2/firestore";
 import {NavController} from "ionic-angular";
-import {HomePage} from "../../pages/home/home";
 import {User} from "../../models/User";
 import { App } from "ionic-angular";
+import {AppcooliqueListPage} from "../../pages/appcoolique-list/appcoolique-list";
 
 /*
   Generated class for the AuthProvider provider.
@@ -28,7 +28,7 @@ export class AuthProvider {
     try {
       const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       if (result) {
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(AppcooliqueListPage);
       }
     }
     catch (e) {
