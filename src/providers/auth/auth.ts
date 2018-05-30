@@ -26,6 +26,7 @@ export class AuthProvider {
 
   async login(user: User) {
     try {
+      this.user = user;
       const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       if (result) {
         this.navCtrl.setRoot(AppcooliqueListPage);
@@ -38,6 +39,7 @@ export class AuthProvider {
 
   async signup(user: User){
     try{
+      this.user = user;
       const result = this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
       if (result) {
         this.navCtrl.setRoot(AppcooliqueListPage);
@@ -45,6 +47,10 @@ export class AuthProvider {
     }catch (e) {
       console.error(e);
     }
+  }
+
+  get authenthicated(): boolean{
+    return this.user !== null;
   }
 
 }

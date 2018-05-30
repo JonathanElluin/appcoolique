@@ -9,6 +9,7 @@ import {User} from "../../models/User";
 import { AngularFireAuth } from 'angularfire2/auth';
 import {AuthProvider} from "../../providers/auth/auth";
 import {RegisterPage} from "../register/register";
+import {AppcooliqueListPage} from "../appcoolique-list/appcoolique-list";
 
 /**
  * Generated class for the LoginPage page.
@@ -29,6 +30,12 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, private afAuth: AngularFireAuth, auth_service: AuthProvider) {
     this.auth_service = auth_service;
+  }
+
+  ngOnInit(){
+    if(this.auth_service.authenthicated){
+      this.navCtrl.push(AppcooliqueListPage);
+    }
   }
 
 
