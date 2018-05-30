@@ -36,4 +36,15 @@ export class AuthProvider {
     }
   }
 
+  async signup(user: User){
+    try{
+      const result = this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
+      if (result) {
+        this.navCtrl.setRoot(AppcooliqueListPage);
+      }
+    }catch (e) {
+      console.error(e);
+    }
+  }
+
 }
