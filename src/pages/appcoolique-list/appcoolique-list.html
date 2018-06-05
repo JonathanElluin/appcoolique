@@ -8,7 +8,7 @@
 
 
 <ion-content>
-
+  
   <ion-list>
     <ion-item *ngFor="let appcoolique of appcooliques | async">
       <ion-avatar item-start>
@@ -20,6 +20,9 @@
         <ion-icon name="beer"></ion-icon>
         <span>{{appcoolique.appcooliquescore}}</span>
       </div>
+      <div item-end>
+          <ion-icon name="trash" (click)="removeAlcoolique(appcoolique)"></ion-icon>
+        </div>
     </ion-item>
   </ion-list>
 

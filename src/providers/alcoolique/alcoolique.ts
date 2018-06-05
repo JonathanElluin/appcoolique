@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import {QueryFn} from 'angularfire2/firestore/interfaces';
-import * as firebase from 'firebase/app';
+import * as firebase from 'firebase';
 import DocumentReference = firebase.firestore.DocumentReference;
 import { Observable } from 'rxjs/observable';
 
@@ -28,7 +28,8 @@ export class AlcooliqueProvider {
   }
 
   add(data: Alcoolique): Promise<DocumentReference> {
-    return this.afs.collection<Alcoolique>(this.path).add(data);
+    const obectifiedData = JSON.parse(JSON.stringify(data));
+    return this.afs.collection<Alcoolique>(this.path).add(obectifiedData);
   }
 
   remove(id: string): Promise<void> {

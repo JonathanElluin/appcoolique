@@ -18,33 +18,52 @@
   <ion-list>
 
     <ion-item>
-      <ion-label floating>Firstname</ion-label>
+      <ion-label fixed>Firstname</ion-label>
       <ion-input type="text" [(ngModel)]="alcoolique.firstname" name="firstname"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Lastname</ion-label>
+      <ion-label fixed>Lastname</ion-label>
       <ion-input type="text" [(ngModel)]="alcoolique.lastname" name="lastname"></ion-input>
     </ion-item>
 
-    <ion-list radio-group [(ngModel)]="alcoolique.sex">
-      <ion-list-header>
-        Sex
-      </ion-list-header>
-      <ion-item>
-        <ion-label>Male</ion-label>
-        <ion-radio value="Male"></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>Female</ion-label>
-        <ion-radio value="Female"></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>Other</ion-label>
-        <ion-radio value="Other"></ion-radio>
-      </ion-item>
-    </ion-list>
+    <ion-item>
+      <ion-label fixed>Sex</ion-label>
+      <ion-select [(ngModel)]="alcoolique.sex">
+        <ion-option value="Male">Male</ion-option>
+        <ion-option value="Female">Female</ion-option>
+        <ion-option value="Other">Other</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Birthday</ion-label>
+      <ion-input type="date" [(ngModel)]="alcoolique.birthday" name="birthday"></ion-input>
+    </ion-item>
+
+    <br/>
+
+    <ion-item>
+      <ion-label fixed>Address</ion-label>
+      <ion-input type="text" [(ngModel)]="alcoolique.address.address" name="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>City</ion-label>
+      <ion-input type="text" [(ngModel)]="alcoolique.address.city" name="city"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Zipcode</ion-label>
+      <ion-input type="number" [(ngModel)]="alcoolique.address.zipcode" name="zipcode"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Country</ion-label>
+      <ion-input type="text" [(ngModel)]="alcoolique.address.country" name="country"></ion-input>
+    </ion-item>
 
   </ion-list>
+
+  <div padding> 
+      <button ion-button block (click)="createAppcoolique()">Create</button>
+  </div>
 
 </ion-content>
