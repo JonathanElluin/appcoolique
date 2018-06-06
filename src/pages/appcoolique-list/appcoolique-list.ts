@@ -38,4 +38,8 @@ export class AppcooliqueListPage {
   removeAlcoolique(alcoolique: Alcoolique){
     this.alcooliqueProvidder.remove(alcoolique.id);
   }
+
+  seeAlcoolique(alcoolique: Alcoolique){
+    this.navCtrl.push(AppcooliqueAddPage, {alcoolique: alcoolique});
+  }
 }
