@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { Alcoolique } from "../../models/appcoolique";
 import { AlcooliqueProvider } from "../../providers/alcoolique/alcoolique";
+import { MapPage } from "../map/map";
 
 @IonicPage()
 @Component({
@@ -31,15 +32,21 @@ export class AppcooliqueAddPage {
   saveAppcoolique() {
     if(this.isDetailsView){
       console.log(this.alcoolique);
-      this.alcooliqueProvider.update(this.alcoolique.id, this.alcoolique).then(res => {
-        console.log(res);
+      this.alcooliqueProvider.update(this.alcoolique.id, this.alcoolique).catch(error => {
+        alert("An error occured, try again please.");
+        console.error(error);
       });
     }
     else{
-      this.alcooliqueProvider.add(this.alcoolique).then(res => {
-        console.log(res);
+      this.alcooliqueProvider.add(this.alcoolique).catch(error => {
+        alert("An error occured, try again please.");
+        console.error(error);
       });
     }
     this.navCtrl.pop();
+  }
+
+  openMap(){
+    this.navCtrl.push(MapPage, {alcoolique: this.alcoolique});
   }
 }

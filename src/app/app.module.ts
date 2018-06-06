@@ -10,6 +10,7 @@ import {LoginPage} from '../pages/login/login';
 import {AppcooliqueListPage} from '../pages/appcoolique-list/appcoolique-list';
 import {AppcooliqueAddPage} from '../pages/appcoolique-add/appcoolique-add';
 import {RegisterPage} from '../pages/register/register';
+import {MapPage} from '../pages/map/map';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -26,7 +27,8 @@ import { AuthProvider } from '../providers/auth/auth';
     LoginPage,
     AppcooliqueListPage,
     AppcooliqueAddPage,
-    RegisterPage
+    RegisterPage,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { AuthProvider } from '../providers/auth/auth';
     LoginPage,
     AppcooliqueListPage,
     AppcooliqueAddPage,
-    RegisterPage
+    RegisterPage,
+    MapPage
   ],
   providers: [
     StatusBar,
