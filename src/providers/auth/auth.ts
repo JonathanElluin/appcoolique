@@ -8,12 +8,7 @@ import {User} from "../../models/User";
 import { App } from "ionic-angular";
 import {AppcooliqueListPage} from "../../pages/appcoolique-list/appcoolique-list";
 
-/*
-  Generated class for the AuthProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class AuthProvider {
   private user: firebase.User;
@@ -26,7 +21,6 @@ export class AuthProvider {
 
   async login(user: User) {
     try {
-      this.user = user;
       const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       if (result) {
         this.navCtrl.setRoot(AppcooliqueListPage);
@@ -39,7 +33,6 @@ export class AuthProvider {
 
   async signup(user: User){
     try{
-      this.user = user;
       const result = this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
       if (result) {
         this.navCtrl.setRoot(AppcooliqueListPage);
