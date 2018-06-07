@@ -32,11 +32,11 @@ export class LoginPage {
     this.auth_service = auth_service;
   }
 
-  ngOnInit(){
+  /*ngOnInit(){
     if(this.auth_service.authenthicated){
       this.navCtrl.push(AppcooliqueListPage);
     }
-  }
+  }*/
 
 
   user = {} as User;

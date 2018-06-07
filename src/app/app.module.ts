@@ -18,7 +18,8 @@ import {AngularFireModule} from "angularfire2";
 import {firebaseConfig} from "./app.firebaseConfig";
 import { AlcooliqueProvider } from '../providers/alcoolique/alcoolique';
 import { AuthProvider } from '../providers/auth/auth';
-
+import {Camera} from '@ionic-native/camera'
+import {storage} from 'firebase';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { AuthProvider } from '../providers/auth/auth';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AlcooliqueProvider,
-    AuthProvider
+    AuthProvider,
+    Camera
   ]
 })
 export class AppModule {

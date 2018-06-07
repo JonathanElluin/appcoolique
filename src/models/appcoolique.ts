@@ -8,6 +8,7 @@ export class Alcoolique {
           country: null,
           coordinates: null
       };
+      this.pictures = null
   }
 
   id?: string;
@@ -16,6 +17,7 @@ export class Alcoolique {
   sex: string;
   appcooliquescore: number;
   birthday: Date;
+  pictures: string;
   address: {
     address: string;
     city: string;
@@ -23,10 +25,5 @@ export class Alcoolique {
     country: string;
     coordinates?: any;
   };
-  pictures: [
-    {
-      addeddate: Date;
-      url: string;
-    }
-  ];
+
 }
